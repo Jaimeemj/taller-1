@@ -10,6 +10,7 @@ import java.util.Map;
 
 import uniandes.dpoo.taller0.modelo.Atleta;
 import uniandes.dpoo.taller0.modelo.Genero;
+import uniandes.dpoo.taller0.modelo.Pais;
 import uniandes.dpoo.taller0.procesamiento.CalculadoraEstadisticas;
 import uniandes.dpoo.taller0.procesamiento.LoaderOlimpicos;
 
@@ -67,6 +68,10 @@ public class ConsolaOlimpicos
 					System.out.println("Saliendo de la aplicación ...");
 					continuar = false;
 				}
+				else if (opcion_seleccionada == 14){
+					String nombre = input("Introduzca el nombre del atleta que quiere buscar");
+					ejecutarEncontrarPaisAtleta(nombre);
+				}
 				else if (calculadora == null)
 				{
 					System.out.println("Para poder ejecutar esta opción primero debe cargar un archivo de atletas.");
@@ -102,7 +107,8 @@ public class ConsolaOlimpicos
 		System.out.println("10. Consultar el atleta todoterreno");
 		System.out.println("11. Consultar los medallistas por país y género");
 		System.out.println("12. Consultar el porcentaje de atletas que son medallistas");
-		System.out.println("13. Salir de la aplicación\n");
+		System.out.println("13. Salir de la aplicación");
+		System.out.println("14. Consultar pais de atleta\n");
 	}
 
 	/**
@@ -404,6 +410,10 @@ public class ConsolaOlimpicos
 	 * @param mensaje El mensaje que se le mostrará al usuario
 	 * @return La cadena de caracteres que el usuario escriba como respuesta.
 	 */
+	private void ejecutarEncontrarPaisAtleta(String nombre) {
+		String pais = calculadora.buscarPaisDeAtleta(nombre);	
+		System.out.println(pais);
+		}
 	public String input(String mensaje)
 	{
 		try

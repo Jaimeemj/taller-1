@@ -1,5 +1,4 @@
 package uniandes.dpoo.taller0.procesamiento;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -45,7 +44,7 @@ public class CalculadoraEstadisticas
 	// ************************************************************************
 	// Constructores
 	// ************************************************************************
-
+	
 	/**
 	 * Construye una calculadora de estadísticas, guardando la información
 	 * proporcionada sobre atletas, países y eventos.
@@ -426,6 +425,13 @@ public class CalculadoraEstadisticas
 				elAtleta = atletas.get(i);
 		}
 		return elAtleta;
+	}
+	public String buscarPaisDeAtleta(String nombre) {
+		Pais pais = null;
+		Atleta objetoAtleta = buscarAtleta(nombre);
+		pais = objetoAtleta.darPais();
+		String nombrePais = pais.darNombre();
+		return nombrePais;
 	}
 
 	/**
