@@ -412,7 +412,7 @@ public class ConsolaOlimpicos
 	 */
 	private void ejecutarEncontrarPaisAtleta(String nombre) {
 		String pais = calculadora.buscarPaisDeAtleta(nombre);	
-		System.out.println(pais);
+		System.out.println("el pais del atleta es: "+pais);
 		}
 	public String input(String mensaje)
 	{
